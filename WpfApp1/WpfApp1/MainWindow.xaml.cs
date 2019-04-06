@@ -39,10 +39,10 @@ namespace WpfApp1
             double Distance = Convert.ToDouble(DistanceBox.Text);
             double DPSs = footlength + (footlength * 1.5);
             double DPSl = footlength + (footlength * 2);
-            
+
             int Stepss = (int)((Distance * 63360) / DPSs + 0.5);
             int Stepsl = (int)((Distance * 63360) / DPSl + 0.5);
-            
+
             ResultBlock.Text = "Your estimated steps: between " + Stepsl + " and " + Stepss;
         }
         private void StoDCalculateButton_CLick(object sender, RoutedEventArgs e)
@@ -55,11 +55,11 @@ namespace WpfApp1
             if (StoDFemaleButton.IsChecked == true)
             {
                 shoesize = Convert.ToDouble(StoDShoeSizeBox.Text);
-                footlength = 0.33 * shoesize + 7.35;
+                footlength = 0.33 * shoesize + 7;
             }
             double DPS = footlength + (footlength * 1.75);
             int Steps = (int)Convert.ToDouble((StoDDistanceBox.Text));
-            double DistanceResult = (int)((Steps * DPS / 63360) * 100)/100.0 ;
+            double DistanceResult = (int)((Steps * DPS / 63360) * 100) / 100.0;
             StoDResultBlock.Text = "Your estimated distance: " + DistanceResult + " miles";
         }
     }
